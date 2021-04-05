@@ -1,1 +1,1 @@
-# dfs-bfs-animation-using-graphviz
+# dfs-bfs-animation-using-networkx
