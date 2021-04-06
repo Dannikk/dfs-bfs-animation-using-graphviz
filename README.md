@@ -54,4 +54,4 @@ main(start='A', algorithm='dfs')
 ## Contacts:
 
 * Email: danilov.na@edu.spbstu.ru
-* [Telegram](https://t.me/dannik0103): @dannik0103
+* Telegram: [@dannik0103](https://t.me/dannik0103)
