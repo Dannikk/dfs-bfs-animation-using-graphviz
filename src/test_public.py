@@ -4,7 +4,7 @@ from src.main import *
 import sys
 import platform
 
-graph_1 = 'test_source/test_graph_1.txt'
+graph_1 = '../test_source/test_graph_1.txt'
 real_graph_1 = {'1': ['12', '13'],
                 '12': ['121', '122', '123'],
                 '13': ['131', '132'],
