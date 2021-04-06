@@ -42,11 +42,11 @@ main(start='A', algorithm='bfs')
 ```
 
 ## Result: 
-![BFS_gif](output/bfs animation (...input.graph.txt).gif)
+![BFS_gif](https://github.com/Dannikk/dfs-bfs-animation-using-networkx/blob/main/output/bfs%20animation%20(...input.graph.txt).gif)
 
 And for:
 ``` python
 from src.main import main
 main(start='A', algorithm='dfs')
 ```
-![DFS_gif](output/dfs animation (...input.graph.txt).gif)
+![DFS_gif](https://github.com/Dannikk/dfs-bfs-animation-using-networkx/blob/main/output/dfs%20animation%20(...input.graph.txt).gif)
