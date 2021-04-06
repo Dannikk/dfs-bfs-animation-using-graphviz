@@ -1,26 +1,31 @@
 import pytest
 import os
-from src.main import *
-import sys
+from src.main import main, plt
+from src.graph_tools import *
 import platform
 
-graph_1 = '../test_source/test_graph_1.txt'
+
+graph_1 = 'test_source/test_graph_1.txt'
+STORAGE = 'test_source/'
+
+# necessary define operation system
+if platform.system() == 'Windows':
+    graph_1 = '../' + graph_1
+    STORAGE = '../' + STORAGE
+elif platform.system() == 'Linux':
+    graph_1 = graph_1
+    STORAGE = STORAGE
+
+
 real_graph_1 = {'1': ['12', '13'],
                 '12': ['121', '122', '123'],
                 '13': ['131', '132'],
                 '131': ['1311'],
                 '1311': ['13111']}
 
-STORAGE = 'test_source/'
-
 
 def test_read_graph():
-    print("\n", os.getcwd(), "____________===______________")
-    print("\n_____________________________")
     print("\t", platform.system())
-    print("\t", sys.platform)
-    print("\t", sys.path)
-    print("_____________________________\n")
     assert os.path.exists(graph_1)
     graph = gr.read_graph(graph_1)
     for node, neighbors in graph:

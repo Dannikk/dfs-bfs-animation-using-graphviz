@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 from src.graph_tools import *
-import platform
-import sys
 
 
 def main(start, file_path='../input/graph.txt', algorithm='dfs', storage: str = '../output/') -> bool:
@@ -40,12 +38,3 @@ def main(start, file_path='../input/graph.txt', algorithm='dfs', storage: str = 
 
 if __name__ == '__main__':
     main(start='A', algorithm='bfs')
-
-
-print(platform.machine())
-print(platform.version())
-print(platform.platform())
-print(platform.uname())
-print(platform.system())
-print(platform.processor())
-print(sys.path)
