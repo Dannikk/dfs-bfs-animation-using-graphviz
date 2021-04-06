@@ -1,6 +1,8 @@
 import pytest
 import os
 from src.main import *
+import sys
+import platform
 
 graph_1 = 'test_source/test_graph_1.txt'
 real_graph_1 = {'1': ['12', '13'],
@@ -13,7 +15,12 @@ STORAGE = 'test_source/'
 
 
 def test_read_graph():
-    print(os.getcwd(), "____________===______________")
+    print("\n", os.getcwd(), "____________===______________")
+    print("\n_____________________________")
+    print("\t", platform.system())
+    print("\t", sys.platform)
+    print("\t", sys.path)
+    print("_____________________________\n")
     assert os.path.exists(graph_1)
     graph = gr.read_graph(graph_1)
     for node, neighbors in graph:
