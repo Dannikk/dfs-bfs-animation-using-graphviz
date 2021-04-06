@@ -50,3 +50,8 @@ from src.main import main
 main(start='A', algorithm='dfs')
 ```
 ![DFS_gif](https://raw.githubusercontent.com/Dannikk/dfs-bfs-animation-using-networkx/main/output/dfs%20animation%20(...input.graph.txt).gif)
+
+## Contacts:
+
+* Email: danilov.na@edu.spbstu.ru
+* [Telegram](https://t.me/dannik0103): @dannik0103
