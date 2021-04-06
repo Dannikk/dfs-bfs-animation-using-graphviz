@@ -13,7 +13,7 @@ STORAGE = '../test_source/'
 
 
 def test_read_graph():
-    print(os.getcwd())
+    print(os.getcwd(), "____________===______________")
     assert os.path.exists(graph_1)
     graph = gr.read_graph(graph_1)
     for node, neighbors in graph:
