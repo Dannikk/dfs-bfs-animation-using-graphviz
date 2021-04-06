@@ -1,0 +1,5 @@
+flake8~=3.9.0
+pytest
+networkx~=2.5.1
+matplotlib~=3.4.1
+celluloid

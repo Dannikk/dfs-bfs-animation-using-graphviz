@@ -1,32 +1,40 @@
-import networkx as nx
 import matplotlib.pyplot as plt
-from celluloid import Camera
-import src.graph_reader as gr
+from src.graph_tools import *
 
 
-DEFAULT_COLOR = 'blue'
-MARKED_COLOR = 'green'
-graph = nx.DiGraph()
-fig = plt.figure()
-camera = Camera(fig)
+def main(start, file_path='../input/graph.txt', algorithm='dfs', storage: str = '../output/') -> bool:
+    """
+    The main function that call other functions
+
+    Parameters
+    ----------
+    start : object
+        any hashable object
+    file_path : str
+        directory to file to read graph
+    algorithm : str, default: 'dfs'
+        the name of the algorithm you want to apply to the graph
+    storage : str, default: '../output/'
+        directory where you want to save the gif file
+
+    Returns
+    -------
+    bool :
+        True if the file was created and no errors occurred,
+        False otherwise
+
+    """
+    fig = plt.figure()
+    plt.title(f'{algorithm.upper()} for graph from {file_path}')
+    camera = Camera(fig)
+    graph = graph_builder(file_path)
+    if create_gif(graph, camera, func=algorithm, start=start, source=file_path, storage=storage):
+        print("\nSuccessful completion of the program!")
+        return True
+    else:
+        print("\nAn error has occurred!")
+        return False
 
 
-for nod, neighs in gr.read_graph('graph.txt'):
-    # print(nod, neighs)
-    for neighbour in neighs:
-        graph.add_edge(nod, neighbour)
-
-nx.draw_circular(graph, with_labels=True,
-                 node_color=[graph.nodes[node].get('color', DEFAULT_COLOR) for node in graph.nodes()])
-camera.snap()
-
-for _, attrs in graph.nodes.items():
-    attrs['color'] = MARKED_COLOR
-    nc = [graph.nodes[node].get('color', DEFAULT_COLOR) for node in graph.nodes()]
-    # print("nc=", nc)
-    nx.draw_circular(graph, with_labels=True,
-                     node_color=[graph.nodes[node].get('color', DEFAULT_COLOR) for node in graph.nodes()])
-    camera.snap()
-
-animation = camera.animate(interval=600)
-animation.save("anim_graph.gif", writer="imagemagick")
+if __name__ == '__main__':
+    main(start='A', algorithm='bfs')
