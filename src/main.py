@@ -37,4 +37,4 @@ def main(start, file_path='../input/graph.txt', algorithm='dfs', storage: str = 
 
 
 if __name__ == '__main__':
-    main(start='A', algorithm='bfs')
+    main(start='A', algorithm='dfs')
