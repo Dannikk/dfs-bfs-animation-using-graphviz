@@ -2,17 +2,18 @@ import pytest
 import os
 from src.main import *
 
-graph_1 = '//test_source/test_graph_1.txt'
+graph_1 = '../test_source/test_graph_1.txt'
 real_graph_1 = {'1': ['12', '13'],
                 '12': ['121', '122', '123'],
                 '13': ['131', '132'],
                 '131': ['1311'],
                 '1311': ['13111']}
 
-STORAGE = '//test_source/'
+STORAGE = '../test_source/'
 
 
 def test_read_graph():
+    print(os.getcwd())
     assert os.path.exists(graph_1)
     graph = gr.read_graph(graph_1)
     for node, neighbors in graph:
